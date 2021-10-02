@@ -8,8 +8,10 @@ public class Main {
         try {
             MyArray.myArr(nArr);
         }catch (MyArraySizeException e){
+            System.out.println("нужен массив 4 на 4");
 
         }catch (MyArrayDataException e){
+            System.out.println("Что-то пошло нетак");
             e.printStackTrace();
         }
 

@@ -1,5 +1,5 @@
 package DZ2;
 
-public class MyArrayDataException extends Exception{
+public class MyArrayDataException extends NumberFormatException{
 
 }

@@ -4,26 +4,29 @@ import java.lang.reflect.Array;
 
 public  class MyArray {
 
-    public static void myArr(String[][] a) throws MyArraySizeException, MyArrayDataException{
+    public static void myArr(String[][] a) throws MyArraySizeException, MyArrayDataException {
         int summ = 0;
-        String[][] arr = new String[4][4];
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = "1";
-            }
-        }
-        for (String[] anArr : arr) {
-            for (String anAnArr : anArr) {
-                System.out.print(anAnArr + " ");
-            }
+        if (a.length==4) {
 
-        }
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                int b = Integer.parseInt(arr[i][j]);
-                summ = summ+b;
-
+            for (int i = 0; i < a.length; i++) {
+                for (int j = 0; j < a[i].length; j++) {
+                    a[i][j] = "1";
+                }
             }
-        }
-        System.out.println(summ);
-    }}
+            for (String[] anArr : a) {
+                for (String anAnArr : anArr) {
+                    System.out.print(anAnArr + " ");
+                }
+            }
+                for (int i = 0; i < a.length; i++) {
+                    for (int j = 0; j < a[i].length; j++) {
+                        if (a[i][j].matches("[-+]?\\d+")){
+                        int b = Integer.parseInt(a[i][j]);
+                        summ = summ + b;
+                        }else throw new MyArrayDataException();
+                    }
+                }
+            System.out.println(summ);
+        }else throw new  MyArraySizeException();
+    }
+    }
