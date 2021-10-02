@@ -10,7 +10,7 @@ public class Main {
         }catch (MyArraySizeException e){
 
         }catch (MyArrayDataException e){
-
+            e.printStackTrace();
         }
 
 
